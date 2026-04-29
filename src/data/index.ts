@@ -60,7 +60,7 @@ export const PROJECTS: Project[] = [
     description:
       'Built a full UK car marketplace from scratch — real-time search, HPI checks, price history charts, and part-exchange calculator. Designed and shipped solo as a single-page app.',
     tech: ['HTML5', 'CSS3', 'JavaScript'],
-    href: 'https://skaisavi.github.io/autodrive',
+    href: 'https://autodrive-delta.vercel.app',
   },
   {
     id: 'prime-steak',
