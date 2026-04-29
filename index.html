@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skaiste Savitri — Frontend Developer</title>
+  <meta name="description" content="Frontend developer based in the UK crafting seamless, beautiful digital experiences. Open to full-time, freelance & contract roles.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Skaiste Savitri — Frontend Developer">
+  <meta property="og:description" content="Frontend developer based in the UK crafting seamless, beautiful digital experiences. Open to full-time, freelance & contract.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80">
+  <meta property="og:url" content="https://skaistesavitri.dev">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Skaiste Savitri — Frontend Developer">
+  <meta name="twitter:description" content="Frontend developer based in the UK crafting seamless, beautiful digital experiences.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://skaistesavitri.dev">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-text">S.</div>
+</div>
+
+<!-- Custom cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#hero">S.</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="cv.pdf" class="nav-cv magnetic" download aria-label="Download CV">Download CV ↓</a>
+    <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mm-link">About</a>
+  <a href="#experience" class="mm-link">Experience</a>
+  <a href="#work" class="mm-link">Work</a>
+  <a href="#skills" class="mm-link">Skills</a>
+  <a href="#contact" class="mm-link">Contact</a>
+  <a href="cv.pdf" class="mm-cv" download>Download CV ↓</a>
+</div>
+
+<!-- ─── HERO ─── -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow"><span class="deco-star">✦</span> Hello, I'm</p>
+    <h1 class="hero-title">
+      <span class="line">Skaiste</span>
+      <span class="line gradient-text">Savitri.</span>
+    </h1>
+    <p class="hero-role">
+      <span class="typed-wrap"><span class="typed" id="typed"></span><span class="caret">|</span></span>
+    </p>
+    <p class="hero-desc">
+      Frontend developer crafting seamless digital experiences with a keen eye for detail and a love for purposeful design.
+    </p>
+    <div class="hero-chips">
+      <span class="hero-chip">📍 UK</span>
+      <span class="hero-chip">✓ Open to remote</span>
+      <span class="hero-chip">✓ Full-time &amp; freelance</span>
+    </div>
+    <div class="hero-cta">
+      <a href="#work" class="btn btn-primary magnetic">View my work</a>
+      <a href="cv.pdf" class="btn btn-ghost magnetic" download>Download CV ↓</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── ABOUT ─── -->
+<section class="about" id="about">
+  <div class="container">
+    <span class="section-tag reveal">About me</span>
+    <div class="about-grid">
+      <div class="about-visual reveal">
+        <div class="about-card">
+          <div class="avatar-ring">
+            <div class="avatar">SS</div>
+          </div>
+          <div class="availability-badge">
+            <span class="pulse-dot"></span>
+            Available for work
+          </div>
+          <div class="about-card-stat">
+            <div class="mini-stat">
+              <div class="mini-num-row">
+                <span class="mini-num" data-count="2">0</span><span class="mini-plus">+</span>
+              </div>
+              <span class="mini-label">Years exp.</span>
+            </div>
+            <div class="mini-divider"></div>
+            <div class="mini-stat">
+              <div class="mini-num-row">
+                <span class="mini-num" data-count="15">0</span><span class="mini-plus">+</span>
+              </div>
+              <span class="mini-label">Projects</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-text reveal">
+        <h2 class="section-title">Building experiences that feel <em>effortless</em>.</h2>
+        <p>I'm a frontend developer based in the UK, specialising in building modern web applications that are both beautiful and functional. I care deeply about the details — from pixel-perfect layouts to silky-smooth animations.</p>
+        <p>I believe great software is invisible; it simply works the way users expect, delights them when they don't, and never gets in the way.</p>
+        <a href="mailto:skaiste.savitri@gmail.com" class="inline-link">Let's talk →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE ─── -->
+<section class="experience" id="experience">
+  <div class="container">
+    <span class="section-tag reveal">Experience</span>
+    <h2 class="section-title reveal">Where I've been.</h2>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="timeline-card">
+          <div class="tl-header">
+            <div class="tl-title-group">
+              <h3 class="tl-role">Frontend Developer</h3>
+              <p class="tl-company">Codewave Limited · Full-time</p>
+            </div>
+            <div class="tl-meta-right">
+              <span class="tl-date">2024 — Present</span>
+              <span class="tl-badge current">Current</span>
+            </div>
+          </div>
+          <p class="tl-desc">Building and maintaining client-facing websites across a range of industries. Led UI redesigns focused on smoother interactions and visual polish — turning existing sites into modern, responsive experiences that clients were genuinely proud of.</p>
+          <div class="tl-tags">
+            <span>React</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal" data-delay="100">
+        <div class="timeline-card">
+          <div class="tl-header">
+            <div class="tl-title-group">
+              <h3 class="tl-role">BTEC Level 3 Extended Diploma in IT</h3>
+              <p class="tl-company">West Herts College · Watford · DDM</p>
+            </div>
+            <div class="tl-meta-right">
+              <span class="tl-date">2022 — 2024</span>
+              <span class="tl-badge edu">Education</span>
+            </div>
+          </div>
+          <p class="tl-desc">Graduated with Distinction, Distinction, Merit. Covered web development, software design, networking, and database fundamentals — with a strong focus on building and deploying real-world projects throughout.</p>
+          <div class="tl-tags">
+            <span>Web Development</span><span>Software Design</span><span>Databases</span><span>Networking</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── WORK ─── -->
+<section class="work" id="work">
+  <div class="container">
+    <span class="section-tag reveal">Selected work</span>
+    <h2 class="section-title reveal">Projects I'm proud of.</h2>
+  </div>
+  <div class="projects-grid-wrap">
+    <div class="projects-grid">
+
+      <article class="project-card reveal" data-delay="0">
+        <div class="card-media" style="--grad: linear-gradient(135deg, #0d1117 0%, #1a1f3c 60%, #0f2167 100%)">
+          <span class="card-tag">Marketplace</span>
+          <p class="card-media-title">AutoDrive</p>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3>AutoDrive</h3>
+            <a href="https://skaisavi.github.io/autodrive" class="card-arrow" target="_blank" rel="noopener" aria-label="View AutoDrive live">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8"/></svg>
+            </a>
+          </div>
+          <p class="card-problem"><strong>Problem:</strong> Car buyers wasted hours across fragmented sites with no price transparency or trust signals.</p>
+          <p>Built a full UK car marketplace from scratch — real-time search, HPI checks, price history charts, and part-exchange calculator. Designed and shipped solo as a single-page app.</p>
+          <div class="card-tech">
+            <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-delay="80">
+        <div class="card-media" style="--grad: linear-gradient(135deg, #0a0a0a 0%, #1f0a2e 60%, #3d0066 100%)">
+          <span class="card-tag">Coming soon</span>
+          <p class="card-media-title">Project Two</p>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3>Your Next Project</h3>
+            <a href="#" class="card-arrow" aria-label="View project">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8"/></svg>
+            </a>
+          </div>
+          <p class="card-problem"><strong>Problem:</strong> Describe the real user problem your project solved.</p>
+          <p>Replace with your actual project. What did you build, what was your specific role, and what was the measurable outcome?</p>
+          <div class="card-tech">
+            <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project-card reveal" data-delay="160">
+        <div class="card-media" style="--grad: linear-gradient(135deg, #0a0f0a 0%, #0a2010 60%, #003322 100%)">
+          <span class="card-tag">Design system</span>
+          <p class="card-media-title">Project Three</p>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <h3>Another Great Project</h3>
+            <a href="#" class="card-arrow" aria-label="View project">
+              <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 15L15 5M15 5H7M15 5v8"/></svg>
+            </a>
+          </div>
+          <p class="card-problem"><strong>Problem:</strong> Describe the problem this project addressed.</p>
+          <p>A third showcase piece. Replace with a real project — ideally one that shows range: a different domain, stack, or scale from the others.</p>
+          <div class="card-tech">
+            <span>TypeScript</span><span>Vue</span><span>Figma</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ─── SKILLS ─── -->
+<section class="skills" id="skills">
+  <div class="container">
+    <span class="section-tag reveal">Expertise</span>
+    <h2 class="section-title reveal">Tools of my craft.</h2>
+    <div class="bento reveal">
+      <div class="bento-cell large">
+        <h3>Frontend</h3>
+        <div class="pills">
+          <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+          <span>React</span><span>Vue</span><span>TypeScript</span>
+        </div>
+      </div>
+      <div class="bento-cell">
+        <h3>Styling</h3>
+        <div class="pills">
+          <span>Tailwind</span><span>SCSS</span>
+          <span>CSS Animations</span><span>Responsive Design</span>
+        </div>
+      </div>
+      <div class="bento-cell">
+        <h3>Backend</h3>
+        <div class="pills">
+          <span>Node.js</span><span>Express</span>
+          <span>REST APIs</span><span>PostgreSQL</span>
+        </div>
+      </div>
+      <div class="bento-cell accent-cell">
+        <h3>Tools</h3>
+        <div class="pills">
+          <span>Git & GitHub</span><span>Figma</span>
+          <span>VS Code</span><span>Vite</span>
+        </div>
+      </div>
+      <div class="bento-cell">
+        <h3>Principles</h3>
+        <div class="pills">
+          <span>Accessibility</span><span>Performance</span>
+          <span>SEO</span><span>UI/UX Design</span>
+        </div>
+      </div>
+      <div class="bento-cell now-cell">
+        <h3>Right now ✦</h3>
+        <div class="now-list">
+          <div class="now-item">
+            <span class="now-label">Learning</span>
+            <span class="now-value">Next.js &amp; React Server Components</span>
+          </div>
+          <div class="now-item">
+            <span class="now-label">Building</span>
+            <span class="now-value">This portfolio</span>
+          </div>
+          <div class="now-item">
+            <span class="now-label">Reading</span>
+            <span class="now-value">You Don't Know JS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+  <div class="container">
+    <span class="section-tag reveal">Get in touch</span>
+    <div class="contact-inner">
+      <h2 class="contact-title reveal">
+        Let's build something<br><span class="gradient-text">amazing</span> together.
+      </h2>
+      <p class="contact-desc reveal">
+        I'm always open to discussing new projects, creative ideas, or opportunities to be part of something great. My inbox is always open.
+      </p>
+      <div class="contact-actions reveal">
+        <a href="mailto:skaiste.savitri@gmail.com" class="btn btn-primary large magnetic">
+          Say hello →
+        </a>
+        <a href="cv.pdf" class="btn btn-ghost large magnetic" download>Download CV ↓</a>
+        <div class="social-row">
+          <a href="#" class="social-btn magnetic" aria-label="GitHub" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </a>
+          <a href="#" class="social-btn magnetic" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Skaiste Savitri — Designed &amp; built with care.</p>
+    <a href="#hero" class="back-top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
