@@ -63,15 +63,15 @@ export const PROJECTS: Project[] = [
     href: 'https://skaisavi.github.io/autodrive',
   },
   {
-    id: 'project-two',
-    title: 'Your Next Project',
-    tag: 'Coming soon',
-    gradient: 'linear-gradient(135deg, #0a0a0a 0%, #1f0a2e 60%, #3d0066 100%)',
-    problem: 'Describe the real user problem your project solved.',
+    id: 'prime-steak',
+    title: 'Prime Steak & Grill',
+    tag: 'Restaurant',
+    gradient: 'linear-gradient(135deg, #1a0800 0%, #3d1200 60%, #7c2d00 100%)',
+    problem: 'Restaurants needed a slick online presence that converts visitors into diners without friction.',
     description:
-      'Replace with your actual project. What did you build, what was your specific role, and what was the measurable outcome?',
-    tech: ['React', 'Node.js', 'PostgreSQL'],
-    href: '#',
+      'Designed and built a full restaurant website for Prime Steak & Grill — featuring a visual menu, atmosphere showcase, and smooth user experience. Shipped as a fast React single-page app.',
+    tech: ['React', 'CSS3', 'JavaScript'],
+    href: 'https://prime-react-green.vercel.app',
   },
   {
     id: 'project-three',
