@@ -58,9 +58,6 @@ export default function About() {
         <div className="about-grid">
           <Reveal className="about-visual">
             <div className="about-card">
-              <div className="avatar-ring">
-                <div className="avatar">SS</div>
-              </div>
               <div className="availability-badge">
                 <span className="pulse-dot" />
                 Available for work
