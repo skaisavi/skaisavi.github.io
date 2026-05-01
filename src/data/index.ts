@@ -74,15 +74,15 @@ export const PROJECTS: Project[] = [
     href: 'https://prime-react-green.vercel.app',
   },
   {
-    id: 'project-three',
-    title: 'Another Great Project',
-    tag: 'Design system',
-    gradient: 'linear-gradient(135deg, #0a0f0a 0%, #0a2010 60%, #003322 100%)',
-    problem: 'Describe the problem this project addressed.',
+    id: 'debeselis',
+    title: 'Debeselis',
+    tag: 'Banking App',
+    gradient: 'linear-gradient(135deg, #0a1628 0%, #1a3a6b 60%, #7ba7e8 100%)',
+    problem: 'Mobile banking UIs are cluttered and impersonal — users want something clean, modern, and actually pleasant to open.',
     description:
-      'A third showcase piece. Replace with a real project — ideally one that shows range: a different domain, stack, or scale from the others.',
-    tech: ['TypeScript', 'Vue', 'Figma'],
-    href: '#',
+      'Built a cloud banking platform — animated login, OTP flow, dashboard with balance cards, and transaction history. Designed and shipped as a React SPA with Framer Motion animations and a sky-blue visual identity.',
+    tech: ['React', 'TypeScript', 'Framer Motion', 'Tailwind'],
+    href: 'https://debeselis-app.vercel.app/login',
   },
 ]
 
