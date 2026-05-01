@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
 import { TYPEWRITER_PHRASES } from '@/data'
 
 function useTypewriter(phrases: string[], started: boolean): string {
@@ -42,11 +43,30 @@ function useTypewriter(phrases: string[], started: boolean): string {
   return text
 }
 
+const container = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.05,
+    },
+  },
+}
+
+const item = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring' as const, stiffness: 480, damping: 28 },
+  },
+}
+
 export default function Hero() {
   const [started, setStarted] = useState(false)
 
   useEffect(() => {
-    const timer = setTimeout(() => setStarted(true), 700)
+    const timer = setTimeout(() => setStarted(true), 250)
     return () => clearTimeout(timer)
   }, [])
 
@@ -59,38 +79,45 @@ export default function Hero() {
         <div className="blob blob-2" />
         <div className="blob blob-3" />
       </div>
-      <div className="hero-content">
-        <p className="hero-eyebrow">
+
+      <motion.div className="hero-content" variants={container} initial="hidden" animate="visible">
+        <motion.p className="hero-eyebrow" variants={item}>
           <span className="deco-star">✦</span> Hello, I&apos;m
-        </p>
-        <h1 className="hero-title">
+        </motion.p>
+        <motion.h1 className="hero-title" variants={item}>
           <span className="line">Skaiste</span>
           <span className="line gradient-text">Savitri.</span>
-        </h1>
-        <p className="hero-role">
+        </motion.h1>
+        <motion.p className="hero-role" variants={item}>
           <span className="typed-wrap">
             <span className="typed">{typed}</span>
             <span className="caret">|</span>
           </span>
-        </p>
-        <p className="hero-desc">
+        </motion.p>
+        <motion.p className="hero-desc" variants={item}>
           Frontend developer crafting seamless digital experiences with a keen eye for detail and a
           love for purposeful design.
-        </p>
-        <div className="hero-chips">
+        </motion.p>
+        <motion.div className="hero-chips" variants={item}>
           <span className="hero-chip">📍 UK</span>
           <span className="hero-chip">✓ Open to remote</span>
           <span className="hero-chip">✓ Full-time &amp; freelance</span>
-        </div>
-        <div className="hero-cta">
+        </motion.div>
+        <motion.div className="hero-cta" variants={item}>
           <a href="#work" className="btn btn-primary magnetic">View my work</a>
           <a href="cv.pdf" className="btn btn-ghost magnetic" download>Download CV ↓</a>
-        </div>
-      </div>
-      <div className="scroll-hint">
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="scroll-hint"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.9, duration: 0.5 }}
+      >
         <span>Scroll</span>
         <div className="scroll-line" />
-      </div>
+      </motion.div>
     </section>
   )
 }

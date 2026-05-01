@@ -68,7 +68,7 @@ export default function About() {
               <div className="about-card-stat">
                 <CountStat target={2} label="Years exp." />
                 <div className="mini-divider" />
-                <CountStat target={15} label="Projects" />
+                <CountStat target={5} label="Projects" />
               </div>
             </div>
           </Reveal>

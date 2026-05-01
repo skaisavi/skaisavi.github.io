@@ -1,96 +1,72 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import { SKILL_GROUPS, NOW_ITEMS, type SkillGroup } from '@/data'
 
+const pillContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.04 } },
+}
+
+const pillItem = {
+  hidden: { opacity: 0, scale: 0.85, y: 8 },
+  visible: {
+    opacity: 1, scale: 1, y: 0,
+    transition: { type: 'spring' as const, stiffness: 500, damping: 28 },
+  },
+}
+
 function BentoCell({ group, index }: { group: SkillGroup; index: number }) {
-  const cellRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const cell = cellRef.current
-    if (!cell) return
-
-    const pills = cell.querySelectorAll<HTMLSpanElement>('.pills span')
-    pills.forEach((pill, pi) => {
-      pill.style.opacity = '0'
-      pill.style.transform = 'translateY(10px)'
-      pill.style.transition = `opacity 0.4s ${index * 60 + pi * 40}ms, transform 0.4s ${index * 60 + pi * 40}ms`
-    })
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return
-        pills.forEach(pill => {
-          pill.style.opacity = '1'
-          pill.style.transform = 'translateY(0)'
-        })
-        observer.unobserve(entry.target)
-      },
-      { threshold: 0.2 },
-    )
-    observer.observe(cell)
-    return () => observer.disconnect()
-  }, [index])
-
   const variantClass =
     group.variant === 'large' ? 'bento-cell large' :
     group.variant === 'accent' ? 'bento-cell accent-cell' :
     'bento-cell'
 
   return (
-    <div className={variantClass} ref={cellRef}>
+    <Reveal className={variantClass} delay={index * 50}>
       <h3>{group.title}</h3>
-      <div className="pills">
+      <motion.div
+        className="pills"
+        variants={pillContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+      >
         {group.items.map(item => (
-          <span key={item}>{item}</span>
+          <motion.span key={item} variants={pillItem}>{item}</motion.span>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </Reveal>
   )
 }
 
 function NowCell() {
-  const cellRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    const cell = cellRef.current
-    if (!cell) return
-
-    const items = cell.querySelectorAll<HTMLDivElement>('.now-item')
-    items.forEach((item, i) => {
-      item.style.opacity = '0'
-      item.style.transform = 'translateX(-12px)'
-      item.style.transition = `opacity 0.5s ${i * 100}ms, transform 0.5s ${i * 100}ms`
-    })
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) return
-        items.forEach(item => {
-          item.style.opacity = '1'
-          item.style.transform = 'translateX(0)'
-        })
-        observer.unobserve(entry.target)
-      },
-      { threshold: 0.3 },
-    )
-    observer.observe(cell)
-    return () => observer.disconnect()
-  }, [])
-
   return (
-    <div className="bento-cell now-cell" ref={cellRef}>
+    <Reveal className="bento-cell now-cell">
       <h3>Right now ✦</h3>
-      <div className="now-list">
+      <motion.div
+        className="now-list"
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
         {NOW_ITEMS.map(({ label, value }) => (
-          <div className="now-item" key={label}>
+          <motion.div
+            className="now-item"
+            key={label}
+            variants={{
+              hidden: { opacity: 0, x: -12 },
+              visible: { opacity: 1, x: 0, transition: { type: 'spring', stiffness: 400, damping: 28 } },
+            }}
+          >
             <span className="now-label">{label}</span>
             <span className="now-value">{value}</span>
-          </div>
+          </motion.div>
         ))}
-      </div>
-    </div>
+      </motion.div>
+    </Reveal>
   )
 }
 
@@ -100,12 +76,12 @@ export default function Skills() {
       <div className="container">
         <Reveal as="span" className="section-tag">Expertise</Reveal>
         <Reveal as="h2" className="section-title">Tools of my craft.</Reveal>
-        <Reveal className="bento">
+        <div className="bento">
           {SKILL_GROUPS.map((group, i) => (
             <BentoCell key={group.title} group={group} index={i} />
           ))}
           <NowCell />
-        </Reveal>
+        </div>
       </div>
     </section>
   )

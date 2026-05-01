@@ -12,7 +12,9 @@ export interface Project {
   description: string
   tech: string[]
   href: string
+  comingSoon?: boolean
 }
+
 
 export interface TimelineItem {
   role: string
@@ -84,7 +86,41 @@ export const PROJECTS: Project[] = [
     tech: ['React', 'TypeScript', 'Framer Motion', 'Tailwind'],
     href: 'https://debeselis-app.vercel.app/login',
   },
+  {
+    id: 'saas-dashboard',
+    title: 'SaaS Dashboard',
+    tag: 'UI Design',
+    gradient: 'linear-gradient(135deg, #0d1b2a 0%, #1b2e4b 55%, #1e3a6e 100%)',
+    problem: 'Teams needed a dashboard that surfaces key metrics at a glance without cognitive overload.',
+    description:
+      'A clean, minimal SaaS dashboard designed in Figma — analytics overview, sidebar navigation, data cards, and chart components, all built around a calm visual hierarchy.',
+    tech: ['Figma', 'UI Design', 'Data Viz'],
+    href: 'https://remix-read-74222076.figma.site/',
+  },
+  {
+    id: 'lumiere',
+    title: 'Lumière',
+    tag: 'UI Design',
+    gradient: 'linear-gradient(135deg, #1a0e2e 0%, #3b1f6b 55%, #7c4dbe 100%)',
+    problem: 'Wanted to explore an elegant, light-driven visual language far from typical dark-mode defaults.',
+    description:
+      'A refined UI design project centred on atmosphere and light — warm gradients, considered typography, and an identity that feels more editorial than app-like.',
+    tech: ['Figma', 'UI Design', 'Branding'],
+    href: 'https://twirl-clever-74917925.figma.site/',
+  },
+  {
+    id: 'coming-soon',
+    title: 'Coming Soon',
+    tag: 'UI Design',
+    gradient: 'linear-gradient(135deg, #0e0c18 0%, #1a1630 55%, #251f42 100%)',
+    problem: '',
+    description: 'Something new is in the works. Check back soon.',
+    tech: [],
+    href: '#',
+    comingSoon: true,
+  },
 ]
+
 
 export const EXPERIENCE: TimelineItem[] = [
   {

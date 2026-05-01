@@ -2,8 +2,20 @@
 
 import { useRef } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import type { Project } from '@/data'
+import type { FigmaDesign } from '@/data'
 import Reveal from './Reveal'
+
+function FigmaIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+      <path d="M7 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M14 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+      <path d="M15 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+      <path d="M6 13a3 3 0 0 0-3 3v1h2v-1a1 1 0 0 1 1-1h1v-2H6z" />
+      <path d="M19 13v2h-2v-2a1 1 0 0 1 1-1h1v-2h-1a3 3 0 0 0-3 3v1h2v-1a1 1 0 0 1 1-1z" />
+    </svg>
+  )
+}
 
 function ArrowIcon() {
   return (
@@ -15,7 +27,7 @@ function ArrowIcon() {
 
 const springConfig = { stiffness: 600, damping: 40, mass: 0.5 }
 
-export default function ProjectCard({ project, delay = 0 }: { project: Project; delay?: number }) {
+export default function FigmaCard({ design, delay = 0 }: { design: FigmaDesign; delay?: number }) {
   const ref = useRef<HTMLDivElement>(null)
 
   const rawX = useMotionValue(0)
@@ -46,40 +58,32 @@ export default function ProjectCard({ project, delay = 0 }: { project: Project; 
         onMouseLeave={onMouseLeave}
         style={{ rotateY, rotateX, transformPerspective: 900, height: '100%' }}
       >
-        <div className="card-media" style={{ background: project.gradient }}>
-          <span className="card-tag">{project.tag}</span>
-          <p className="card-media-title">{project.title}</p>
+        <div className="card-media" style={{ background: design.gradient }}>
+          <span className="card-tag figma-tag">
+            <FigmaIcon />
+            {design.category}
+          </span>
+          <p className="card-media-title">{design.title}</p>
         </div>
         <div className="card-body">
           <div className="card-header">
-            <h3>{project.title}</h3>
-            {project.comingSoon ? (
-              <span className="card-coming-soon">Soon</span>
-            ) : (
-              <a
-                href={project.href}
-                className="card-arrow"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`View ${project.title}`}
-              >
-                <ArrowIcon />
-              </a>
-            )}
+            <h3>{design.title}</h3>
+            <a
+              href={design.href}
+              className="card-arrow"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View ${design.title}`}
+            >
+              <ArrowIcon />
+            </a>
           </div>
-          {project.problem && (
-            <p className="card-problem">
-              <strong>Problem:</strong> {project.problem}
-            </p>
-          )}
-          <p>{project.description}</p>
-          {project.tech.length > 0 && (
-            <div className="card-tech">
-              {project.tech.map(t => (
-                <span key={t}>{t}</span>
-              ))}
-            </div>
-          )}
+          <p>{design.description}</p>
+          <div className="card-tech">
+            <span>Figma</span>
+            <span>UI/UX</span>
+            <span>Design</span>
+          </div>
         </div>
       </motion.div>
     </Reveal>
